@@ -17,6 +17,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag kubepractice
     - name: tag image
-      run: docker tag kubepractice us.gcr.io/kubepractice-04192021/kubepractice
+      run: docker tag kubepractice gcr.io/kubepractice-04192021/kubepractice
     - name: push image
       run: docker push gcr.io/kubepractice-04192021/kubepractice
