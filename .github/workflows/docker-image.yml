@@ -16,11 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag kubepractice
-#    - name: tag image
-#      run: docker tag kubepractice gcr.io/kubepractice-04192021/kubepractice
+    - name: tag image
+      run: docker tag kubepractice gcr.io/kubepractice-04192021/kubepractice
     - name: push image
-      uses: docker push gcr.io/kubepractice-04192021/kubepractice
-      with:
-        image: kubepractice
-        registry: us.gcr.io/kubepractice-04192021
-        gcloud_key: ${{ secrets.GCLOUD_SERVICE_ACCOUNT_KEY }}
+      run: docker push gcr.io/kubepractice-04192021/kubepractice
