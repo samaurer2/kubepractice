@@ -19,7 +19,7 @@ jobs:
 #    - name: tag image
 #      run: docker tag kubepractice gcr.io/kubepractice-04192021/kubepractice
     - name: push image
-      run: docker push gcr.io/kubepractice-04192021/kubepractice
+      uses: docker push gcr.io/kubepractice-04192021/kubepractice
       with:
         image: kubepractice
         registry: us.gcr.io/kubepractice-04192021
