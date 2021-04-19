@@ -23,4 +23,4 @@ jobs:
       with:
         image: kubepractice
         registry: us.gcr.io/kubepractice-04192021
-        gcloud_key:${{ secrets.GCLOUD_SERVICE_ACCOUNT_KEY }}
+        gcloud_key: ${{ secrets.GCLOUD_SERVICE_ACCOUNT_KEY }}
