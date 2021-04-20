@@ -12,12 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-        project_id: kubepractice-04192021
-        service_account_key: ${{ secrets.GCLOUD_SERVICE_ACCOUNT_KEY }}
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag kubepractice
     - name: tag image
       run: docker tag kubepractice gcr.io/kubepractice-04192021/kubepractice
-    - name: push image
-      run: docker push gcr.io/kubepractice-04192021/kubepractice
+    - uses: Industrial/push-docker-gcr
+    - with:
+        docker_image_name: gcr.io/kubepractice-04192021/kubepractice
+        docker_image_tag: latest
+        docker_context: .
+        gcr_host: gcr.io
+        gcr_project_id: ${{ secrets.GCLOUD_PROJECT_ID }}
+        gcr_service_key: ${{ secrets.GCLOUD_SERVICE_ACCOUNT_KEY }}
