@@ -8,7 +8,7 @@ COPY . /workspace
 # called /workspace
 # on your PC the root directory for most things is your C: drive
 # in this enviornment we are creating it will be /workspace
-RUN chmod+x 777 /workspace/gradlew bootjar
+RUN chmod +x 777 /workspace/gradlew bootjar
 RUN ./workspace/gradlew bootjar
 WORKDIR /workspace
 # when you write commands what directory they will execute in
