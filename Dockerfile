@@ -15,7 +15,7 @@ RUN pwd
 RUN apt update
 RUN apt-get install -y maven
 # any commands you need to run while building the image
-
+RUN pwd
 RUN cd /build
 RUN pwd
 RUN cd /build/libs
