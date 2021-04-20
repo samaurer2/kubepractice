@@ -11,11 +11,16 @@ COPY . /workspace
 
 WORKDIR /workspace
 # when you write commands what directory they will execute in
+RUN pwd
 RUN apt update
 RUN apt-get install -y maven
 # any commands you need to run while building the image
 
-WORKDIR /workspace/build/libs
+RUN cd /build
+RUN pwd
+RUN cd /build/libs
+RUN pwd
+
 
 EXPOSE 8080
 # this allows the container to be accessed on that port
