@@ -1,26 +1,13 @@
-name: Docker Image CI
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+name: Push to GCR GitHub Action
+on: [push]
 jobs:
-
-  build:
+  build-and-push-to-gcr:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag kubepractice
-    - name: tag image
-      run: docker tag kubepractice gcr.io/kubepractice-04192021/kubepractice
-    - uses: Industrial/push-docker-gcr
-      with:
-        docker_image_name: gcr.io/kubepractice-04192021/kubepractice
-        docker_image_tag: latest
-        docker_context: .
-        gcr_host: gcr.io
-        gcr_project_id: ${{ secrets.GCLOUD_PROJECT_ID }}
-        gcr_service_key: ${{ secrets.GCLOUD_SERVICE_ACCOUNT_KEY }}
+      - uses: actions/checkout@v2
+      - uses: RafikFarhad/push-to-gcr-github-action@v3.0.2
+        with:
+          gcloud_service_key: ${{ secrets.GCLOUD_SERVICE_ACCOUNT_KEY }}
+          registry: gcr.io
+          project_id: ${{secrets.GCLOUD_PROJECT_ID}}
+          image_name: kubepractice
