@@ -17,7 +17,7 @@ jobs:
     - name: tag image
       run: docker tag kubepractice gcr.io/kubepractice-04192021/kubepractice
     - uses: Industrial/push-docker-gcr
-    - with:
+      with:
         docker_image_name: gcr.io/kubepractice-04192021/kubepractice
         docker_image_tag: latest
         docker_context: .
