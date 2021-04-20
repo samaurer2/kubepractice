@@ -15,7 +15,7 @@ RUN apt update
 RUN apt-get install -y maven
 RUN ls
 RUN chmod +x gradlew
-RUN gradlew bootjar
+RUN ./gradlew bootjar
 
 # any commands you need to run while building the imagew
 
