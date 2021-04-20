@@ -14,6 +14,7 @@ WORKDIR /workspace
 RUN pwd
 RUN apt update
 RUN apt-get install -y maven
+RUN gradlew bootjar
 # any commands you need to run while building the imagew
 
 EXPOSE 8080
