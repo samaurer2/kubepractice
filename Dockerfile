@@ -20,7 +20,7 @@ RUN cd /workspace
 RUN pwd
 RUN cd /build
 RUN pwd
-RUN cd /build/libs
+RUN cd /libs
 RUN pwd
 
 
