@@ -10,4 +10,4 @@ WORKDIR /workspace/build/libs
 
 EXPOSE 8080
 
-ENTRYPOINT [ "java", "-jar", "KubepracticeApplication-0.0.1-SNAPSHOT.jar" ]
+ENTRYPOINT [ "java", "-jar", "kubepractice-0.0.1-SNAPSHOT.jar" ]
