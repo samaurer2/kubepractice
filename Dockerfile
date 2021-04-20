@@ -14,6 +14,7 @@ RUN pwd
 RUN apt update
 RUN apt-get install -y maven
 RUN ls
+RUN chmod +x gradlew
 
 # any commands you need to run while building the imagew
 
