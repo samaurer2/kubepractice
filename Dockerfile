@@ -1,13 +1,23 @@
-FROM centos
+FROM ubuntu
+# FROM you specifiy a base image (background environment)
+# create an enviornment that has centos in it
 
 COPY . /workspace
+# copy everything in the current directory of this docker file
+# and put it in the virtual enviornment under the root directory
+# called /workspace
+# on your PC the root directory for most things is your C: drive
+# in this enviornment we are creating it will be /workspace
 
 WORKDIR /workspace
-
-RUN yum install -y maven
+# when you write commands what directory they will execute in
+RUN apt update
+RUN apt-get install -y maven
+# any commands you need to run while building the image
 
 WORKDIR /workspace/build/libs
 
 EXPOSE 8080
+# this allows the container to be accessed on that port
 
-ENTRYPOINT [ "sudo", "java", "-jar", "kubepractice-0.0.1-SNAPSHOT.jar" ]
+ENTRYPOINT [ "java", "-jar", "kubepractice-0.0.1-SNAPSHOT.jar" ]
