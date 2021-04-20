@@ -6,8 +6,6 @@ WORKDIR /workspace
 
 RUN yum install -y maven
 
-RUN cd /build/libs
-
 EXPOSE 8080
 
 ENTRYPOINT [ "java", "-jar", "kubepractice-0.0.1-SNAPSHOT.jar" ]
