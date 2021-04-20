@@ -14,17 +14,9 @@ WORKDIR /workspace
 RUN pwd
 RUN apt update
 RUN apt-get install -y maven
-# any commands you need to run while building the image
-RUN pwd
-RUN cd /workspace
-RUN pwd
-RUN cd /build
-RUN pwd
-RUN cd /libs
-RUN pwd
-
+# any commands you need to run while building the imagew
 
 EXPOSE 8080
 # this allows the container to be accessed on that port
 
-ENTRYPOINT [ "java", "-jar", "kubepractice-0.0.1-SNAPSHOT.jar" ]
+ENTRYPOINT [ "java", "-jar", "/workspace/build/libs/kubepractice-0.0.1-SNAPSHOT.jar" ]
