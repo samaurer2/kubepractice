@@ -6,7 +6,7 @@ WORKDIR /workspace
 
 RUN yum install -y maven
 
-WORKDIR /workspace/build/libs
+RUN cd /workspace/build/libs
 
 EXPOSE 8080
 
