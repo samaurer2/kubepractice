@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: kube
-          image: kubepractice:latest
+          image: gcr.io/kubepractice-04192021/kubepractice:latest
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
