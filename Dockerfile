@@ -8,7 +8,7 @@ COPY . /workspace
 # called /workspace
 # on your PC the root directory for most things is your C: drive
 # in this enviornment we are creating it will be /workspace
-RUN sudo apt install -y gradle
+RUN apt install -y gradle
 RUN chmod +x /workspace/gradlew bootjar
 RUN ./workspace/gradlew bootjar
 WORKDIR /workspace
