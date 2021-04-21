@@ -13,6 +13,8 @@ WORKDIR /workspace
 RUN pwd
 RUN apt update
 RUN apt-get install -y maven
+RUN chmod +x gradlew
+RUN ./gradlew bootjar
 
 # any commands you need to run while building the imagew
 
