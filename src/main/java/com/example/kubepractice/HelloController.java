@@ -12,6 +12,6 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello(){
-        return "This page has been visited " + ++helloCounter +" times!";
+        return "This page has been visited " + ++helloCounter +" times! Autodeploy works now!!";
     }
 }
