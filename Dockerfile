@@ -19,4 +19,4 @@ RUN apt-get install -y maven
 EXPOSE 8080
 # this allows the container to be accessed on that port
 
-ENTRYPOINT [ "java", "-jar", "/build/libs/kubepractice-0.0.1-SNAPSHOT.jar" ]
+ENTRYPOINT [ "java", "-jar", "build/libs/kubepractice-0.0.1-SNAPSHOT.jar" ]
