@@ -1,2 +1,0 @@
-com/example/kubepractice/KubepracticeApplicationTests.java
- com.example.kubepractice.KubepracticeApplicationTests
